@@ -1,6 +1,6 @@
 import React from 'react';
 // React Router
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 // Styles
 import utilsStlyes from '../../styles/utils.module.css';
 import styles from './Header.module.css';
@@ -17,24 +17,22 @@ const Header = () => {
 
     return (
         <header className={header}>
-
             <section className={headerBox}>
-
                 <div className={logoBox}>
                     {pathname !== '/' &&
-                        <img src={logoSrc} alt='logo' height={63} />
+                        <Link to='/'>
+                            <img src={logoSrc} alt='logo' height={63} />
+                        </Link>
                     }
                     {pathname === '/add' &&
                         <div className={returnBox}>
-                            <a className={returnBtn} href='#/'>
+                            <Link to='/' className={returnBtn}>
                                 <img src={returnSrc} alt='icon' />
                                 Return to List Page
-                            </a>
+                            </Link>
                         </div>
                     }
                 </div>
-
-
 
                 {pathname === '/result' &&
                     <div className={formBox}>
@@ -47,9 +45,11 @@ const Header = () => {
 
                 {pathname !== '/add' &&
                     <div className={addBox}>
-                        <button className={btn} >
-                            Add new record
-                        </button>
+                        <Link to='/add'>
+                            <button className={btn} >
+                                Add new record
+                            </button>
+                        </Link>
                     </div>
                 }
 

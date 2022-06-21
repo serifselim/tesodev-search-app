@@ -3,10 +3,28 @@
   text-align: center;
 }
 
+.showBox {
+  max-width: 50%;
+  border: var(--button-border);
+  border-radius: 2.4rem;
+  padding: 1.4rem 3.7rem 2rem 3.7rem;
+  margin-inline: auto;
+  margin-top: 1.7rem;
+}
+
 .searchBox {
   margin-top: 4.1rem;
   width: 60%;
   margin-inline: auto;
+}
+
+.navBtn {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  display: block;
+  text-align: center;
+  color: var(--text-color);
 }
 
 .form {
