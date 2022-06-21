@@ -10,6 +10,7 @@
   --input-hover-color: background: rgba(100, 100, 100, 0.08);
   --icon-color: #eee;
   --label-color:#686868;
+  --button-color: #484848;
   --label-error-color: rgba(255, 0, 0, 0.7);
   --error-text-color: rgba(255, 0, 0, 0.5);
   --footer-color: rgba(41, 78, 152, 0.72);
@@ -20,4 +21,5 @@
   --input-error-border: 1.5px solid #FF0000;
   --input-focus-border: 2px solid #204080;
   --search-input-border: 1px solid #000000;
+  --button-border : 1px solid #484848;
 }

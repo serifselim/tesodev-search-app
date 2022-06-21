@@ -29,3 +29,9 @@ a {
 button {
   border: none;
 }
+
+hr {
+  color: #7e7e7e;
+  margin: 1rem auto;
+  width: 95%;
+}

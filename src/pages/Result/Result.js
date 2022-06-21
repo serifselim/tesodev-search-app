@@ -1,8 +1,19 @@
 import React from 'react';
+// Styles
+import styles from './Result.module.css';
+import { List, Pagination } from '../../components';
 
 const Result = () => {
+    // Style Variables
+    const { container, resultBox } = styles;
+
     return (
-        <div>Result</div>
+        <main className={container}>
+            <section className={resultBox}>
+                <List />
+                <Pagination />
+            </section>
+        </main>
     );
 };
 

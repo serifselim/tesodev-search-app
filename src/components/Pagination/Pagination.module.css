@@ -1,0 +1,35 @@
+.pagBox {
+  margin-top: 5rem;
+  margin-inline: auto;
+}
+
+.pagList {
+  display: flex;
+  justify-content: center;
+}
+
+.pagItem:not(:last-child) {
+  margin-right: 1.1rem;
+}
+
+.pagBtn {
+  cursor: pointer;
+  color: var(--button-color);
+  background: #fff;
+  border: var(--button-border);
+  border-radius: 0.4rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}
+
+.pagBtn:hover {
+  opacity: 0.8;
+}
+
+.pagBtnLg {
+  width: 8.5rem;
+}

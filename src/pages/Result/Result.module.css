@@ -1,0 +1,66 @@
+.container {
+  margin-top: 5rem;
+}
+
+.resultBox {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.resultList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.resultItem {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 2.7rem;
+  border-radius: 0.8rem;
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.resultItem:hover {
+  background: var(--list-hover-color);
+}
+
+.iconBox {
+  margin-right: 1.5rem;
+}
+
+.infBox {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.decs {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: var(--lighter-text-color);
+  margin-top: 0.5rem;
+}
+
+.date {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #484848;
+  margin-top: 0.5rem;
+}
+
+.dateAuth {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
