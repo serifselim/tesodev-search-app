@@ -8,6 +8,7 @@
   --list-hover-color:rgba(79, 117, 194, 0.21);
   --input-color: #fff;
   --input-hover-color: background: rgba(100, 100, 100, 0.08);
+  --icon-color: #eee;
   --label-color:#686868;
   --label-error-color: rgba(255, 0, 0, 0.7);
   --error-text-color: rgba(255, 0, 0, 0.5);
