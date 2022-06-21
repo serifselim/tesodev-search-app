@@ -1,0 +1,28 @@
+.searchBox {
+  margin-top: 4.1rem;
+  width: 60%;
+  margin-inline: auto;
+}
+
+.form {
+  display: flex;
+  position: relative;
+  margin-top: 1.8rem;
+}
+
+.form input {
+  padding-left: 4.8rem;
+  margin-right: 1.1rem;
+}
+
+.form::before {
+  content: '';
+  position: absolute;
+  background-image: url('../../assets/search.svg');
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  width: 2.4rem;
+  height: 2.4rem;
+}
