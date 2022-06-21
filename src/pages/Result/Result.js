@@ -1,7 +1,7 @@
 import React from 'react';
 // Styles
 import styles from './Result.module.css';
-import { List, Pagination } from '../../components';
+import { List, Order, Pagination } from '../../components';
 
 const Result = () => {
     // Style Variables
@@ -10,6 +10,7 @@ const Result = () => {
     return (
         <main className={container}>
             <section className={resultBox}>
+                <Order />
                 <List />
                 <Pagination />
             </section>

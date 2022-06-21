@@ -1,0 +1,47 @@
+.orderBox {
+  position: absolute;
+  right: -140px;
+  top: -30px;
+}
+
+.orderBtn {
+  cursor: pointer;
+  background: #f3f2f2;
+  color: var(--order-button-color);
+  border: var(--order-button-border);
+  border-radius: 0.8rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.orderBtn:hover {
+  opacity: 0.8;
+}
+
+.orderList {
+  margin-top: 1.5rem;
+  box-shadow: 4px 6px 12px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #8f8f8f;
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+}
+
+.itemBtn {
+  font-family: 'Roboto', sans-serif;
+  background: white;
+  border-radius: 0.8rem;
+  padding: 0.5rem 0.9rem;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.itemBtn:hover {
+  background: #b3b3b3;
+  color: #fff;
+}
