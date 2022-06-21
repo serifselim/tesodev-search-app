@@ -9,6 +9,8 @@ import { store } from './app/store';
 // React Router
 import { BrowserRouter } from "react-router-dom";
 
+// Styles
+import './styles/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
