@@ -26,6 +26,7 @@
   line-height: 1.6rem;
   border-radius: 0.8rem;
   transition: all 0.2s ease;
+  cursor: text;
 }
 
 .input:hover {

@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+}
+
+.addBox {
+  width: 55%;
+  margin-top: 3.8rem;
+  margin-inline: auto;
+}
+
+.addForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.addForm button {
+  margin-top: 7rem;
+  align-self: flex-end;
+}
+
+.addLabel {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  margin-top: 3.7rem;
+  margin-bottom: 1.5rem;
+  margin-left: 0.6rem;
+}

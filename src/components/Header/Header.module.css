@@ -11,6 +11,8 @@
 
 .logoBox {
   margin-right: 3.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .formBox {
@@ -27,4 +29,23 @@
 
 .addBox {
   margin-left: 10.3rem;
+}
+
+.returnBox {
+  margin-left: 4rem;
+}
+
+.returnBtn {
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  color: var(--button-color);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.returnBtn img {
+  margin-right: 1.2rem;
 }
