@@ -1,5 +1,6 @@
 import React from 'react';
 import { Add, Home, Result } from './pages';
+import { Header } from './components';
 
 // React Router
 import { Routes, Route } from 'react-router-dom';
@@ -7,6 +8,7 @@ import { Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
     <>
+      <Header />
       <Routes>
         <Route
           path='/'

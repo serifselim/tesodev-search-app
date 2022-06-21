@@ -1,0 +1,38 @@
+@import url('./variables.css');
+
+.btn {
+  cursor: pointer;
+  color: #fff;
+  background: var(--primary-color);
+  transition: background 0.2s ease;
+  border-radius: 12px;
+  padding: 1.3rem 4rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.btn:hover {
+  background: var(--secondary-color);
+}
+
+.input {
+  width: 100%;
+  padding: 1.3rem 2rem;
+  background: var(--input-color);
+  border: var(--search-input-border);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  border-radius: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.input:hover {
+  background: var(--input-hover-color);
+  border: var(--input-hover-border);
+}
+
+.input:focus {
+  border: 2px solid #204080;
+}

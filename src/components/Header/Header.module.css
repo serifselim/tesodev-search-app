@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+}
+
+.headerBox {
+  display: flex;
+  padding: 2.7rem 3.7rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoBox {
+  margin-right: 3.5rem;
+}
+
+.formBox {
+  flex: 1;
+}
+
+.form {
+  display: flex;
+}
+
+.form input {
+  margin-right: 2.4rem;
+}
+
+.addBox {
+  margin-left: 10.3rem;
+}

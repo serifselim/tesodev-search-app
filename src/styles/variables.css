@@ -6,6 +6,7 @@
   --light-text-color: #6C7072;;
   --lighter-text-color: #72777A;
   --list-hover-color:rgba(79, 117, 194, 0.21);
+  --input-color: #fff;
   --input-hover-color: background: rgba(100, 100, 100, 0.08);
   --label-color:#686868;
   --label-error-color: rgba(255, 0, 0, 0.7);
@@ -16,4 +17,6 @@
   --input-border: border: 1.5px solid #484848;
   --input-hover-border: 2px solid rgba(72, 72, 72, 0.6);
   --input-error-border: 1.5px solid #FF0000;
+  --input-focus-border: 2px solid #204080;
+  --search-input-border: 1px solid #000000;
 }
