@@ -3,22 +3,31 @@ import React from 'react';
 import styles from './List.module.css';
 // Assets
 import ListItem from './ListItem';
+// Redux
+import { useSelector } from 'react-redux';
 
 const List = () => {
     // Style Variables
     const { resultList, line } = styles;
+    // States
+    const { currentPageData } = useSelector(state => state.search);
 
     return (
         <ul className={resultList}>
-            <ListItem />
-            <hr className={line} />
-            <ListItem />
-            <hr className={line} />
-            <ListItem />
-            <hr className={line} />
-            <ListItem />
-            <hr className={line} />
-            <ListItem />
+            {
+                currentPageData.map(item => (
+                    <>
+                        <ListItem
+                            nameSurname={item[0]}
+                            company={item[1]}
+                            date={item[3]}
+                            country={item[4]}
+                            city={item[5]}
+                        />
+                        <hr className={line} />
+                    </>
+                ))
+            }
         </ul>
     );
 };

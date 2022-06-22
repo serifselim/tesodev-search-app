@@ -4,9 +4,9 @@ import styles from './List.module.css';
 // Assets
 import navigationSrc from '../../assets/navigation.svg';
 
-const ListItem = () => {
+const ListItem = ({ nameSurname, company, date, country, city }) => {
     // Style Variables
-    const { resultItem, iconBox, infBox, title, decs, dateAuth, date } = styles;
+    const { resultItem, iconBox, infBox, title, decs, dateAuth, dateText } = styles;
 
     return (
         <li className={resultItem}>
@@ -14,12 +14,12 @@ const ListItem = () => {
                 <img src={navigationSrc} alt='icon' height={22} />
             </div>
             <div className={infBox}>
-                <span className={title}>18th Street Brewery</span>
-                <span className={decs}>Oakley Avenue, Hammond, IN</span>
+                <span className={title}>{company}</span>
+                <span className={decs}>{country}, {city}</span>
             </div>
             <div className={dateAuth}>
-                <span className={title}>Jane Doe</span>
-                <span className={date}>01/20/2021</span>
+                <span className={title}>{nameSurname}</span>
+                <span className={dateText}>{date}</span>
             </div>
         </li>
     );

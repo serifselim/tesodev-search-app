@@ -1,5 +1,5 @@
 .pagBox {
-  margin-top: 5rem;
+  margin-block: 5rem;
   margin-inline: auto;
 }
 
@@ -32,4 +32,13 @@
 
 .pagBtnLg {
   width: 8.5rem;
+}
+
+.pagDot {
+  font-family: 'Roboto', sans-serif;
+  font-size: #000;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  margin-right: 1.1rem;
 }
