@@ -1,8 +1,29 @@
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styles from './Order.module.css';
 import orderSrc from '../../assets/order.png';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateFilterArrBySort } from '../../features/searchSlice';
+
+
+const useClickOutside = (handler) => {
+    const domNode = useRef();
+
+    useEffect(() => {
+        let mouseDownFunc = (event) => {
+            if (!domNode.current.contains(event.target)) {
+                handler();
+            }
+        };
+
+        document.addEventListener('mousedown', mouseDownFunc);
+
+        return () => {
+            document.removeEventListener('mousedown', mouseDownFunc);
+        };
+    });
+
+    return domNode;
+};
 
 const Order = () => {
     // Hooks
@@ -39,15 +60,19 @@ const Order = () => {
         dispatch(updateFilterArrBySort(action));
     };
 
+    const domNode = useClickOutside(() => {
+        setIsOpen(false);
+    });
+
     return (
         <div className={orderBox}>
-            <button className={orderBtn}>
+            <button onClick={() => setIsOpen(true)} className={orderBtn}>
                 <img src={orderSrc} alt='icon' />
                 <span>Order By</span>
             </button>
 
-            {!isOpen &&
-                <ul className={orderList}>
+            {isOpen &&
+                <ul ref={domNode} className={orderList}>
                     {orderArr.map((item, i) => (
                         <li key={i} className={orderItem}>
                             <button

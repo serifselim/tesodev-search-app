@@ -15,8 +15,8 @@ const List = () => {
     return (
         <ul className={resultList}>
             {
-                currentPageData.map(item => (
-                    <>
+                currentPageData.map((item, i) => (
+                    <div key={i}>
                         <ListItem
                             nameSurname={item[0]}
                             company={item[1]}
@@ -25,7 +25,7 @@ const List = () => {
                             city={item[5]}
                         />
                         <hr className={line} />
-                    </>
+                    </div>
                 ))
             }
         </ul>
