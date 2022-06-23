@@ -16,13 +16,17 @@
   background: var(--secondary-color);
 }
 
+.btn:disabled {
+  background-color: gray;
+}
+
 .input {
   width: 100%;
   padding: 1.3rem 2rem;
   background: var(--input-color);
   border: var(--search-input-border);
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   line-height: 1.6rem;
   border-radius: 0.8rem;
   transition: all 0.2s ease;

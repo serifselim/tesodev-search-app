@@ -27,4 +27,25 @@
   margin-top: 3.7rem;
   margin-bottom: 1.5rem;
   margin-left: 0.6rem;
+  display: block;
+}
+
+.err {
+  color: var(--label-error-color);
+}
+
+.err input {
+  border-color: red;
+}
+
+.err input::placeholder {
+  color: var(--error-text-color);
+}
+
+.errText {
+  margin-top: 1.7rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  color: var(--error-text-color);
 }

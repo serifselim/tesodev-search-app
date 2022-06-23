@@ -38,6 +38,10 @@ export const searchSlice = createSlice({
             state.totalPage = Math.ceil(state.filterArr.length / maxShowItemPerPage);
             state.isShowMore = state.totalPage ? true : false;
         },
+        addNewItemToArr: (state, { payload }) => {
+            state.searchArr = [payload, ...state.searchArr];
+            state.filterArr = [payload, ...state.filterArr];
+        },
         updateFilterArrBySort: (state, { payload }) => {
             state.filterArr.sort((a, b) => {
                 switch (payload) {
@@ -80,7 +84,8 @@ export const {
     setCurrentPageData,
     setCurrentPageDecrease,
     setCurrentPageIncrease,
-    updateFilterArrBySort
+    updateFilterArrBySort,
+    addNewItemToArr
 } = searchSlice.actions;
 
 export default searchSlice.reducer;
