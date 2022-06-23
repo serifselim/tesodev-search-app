@@ -81,6 +81,7 @@ const Add = () => {
                 formValues.city
             ];
             dispatch(addNewItemToArr(arr));
+            alert('Adding completed successfully');
             // Pass control
         }
     }, [formErrors]);
