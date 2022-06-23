@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from '../Search/Search';
 // React Router
 import { useLocation, Link } from 'react-router-dom';
 // Styles
@@ -7,28 +8,13 @@ import styles from './Header.module.css';
 // Assets
 import logoSrc from '../../assets/logo.png';
 import returnSrc from '../../assets/return.svg';
-//Redux
-import { useSelector, useDispatch } from 'react-redux';
-import { setFilterArrWithText, setSearchText } from '../../features/searchSlice';
 
 const Header = () => {
     // Style Variables
-    const { btn, input } = utilsStlyes;
-    const { logoBox, form, formBox, addBox, headerBox, header, returnBox, returnBtn } = styles;
+    const { btn } = utilsStlyes;
+    const { logoBox, formBox, addBox, headerBox, header, returnBox, returnBtn } = styles;
     // React Router
     const { pathname } = useLocation();
-    // Redux
-    const { searchText } = useSelector(state => state.search);
-    const dispatch = useDispatch();
-
-    const handleChange = e => {
-        dispatch(setSearchText(e.target.value));
-    };
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        dispatch(setFilterArrWithText());
-    };
 
     return (
         <header className={header}>
@@ -51,16 +37,7 @@ const Header = () => {
 
                 {pathname === '/result' &&
                     <div className={formBox}>
-                        <form onSubmit={handleSubmit} className={form}>
-                            <input
-                                placeholder='Search'
-                                value={searchText}
-                                onChange={handleChange}
-                                className={input}
-                                required
-                            />
-                            <button className={btn} >Search</button>
-                        </form>
+                        <Search />
                     </div>
                 }
 

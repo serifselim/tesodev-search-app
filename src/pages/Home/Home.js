@@ -1,15 +1,17 @@
 import React from 'react';
 import { Footer, News, Search } from '../../components';
-import Logo from './Logo';
-//Styles
-import styles from './Home.module.css';
 import ListItem from '../../components/List/ListItem';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Logo from './Logo';
+//Styles
+import styles from './Home.module.css';
+import utilsStyles from '../../styles/utils.module.css';
 
 const Home = () => {
     // Style Variables
-    const { container, showBox, navBtn, searchBox, title } = styles;
+    const { container, showBox, navBtn, searchBox } = styles;
+    const { title } = utilsStyles;
     const { currentPageData } = useSelector(state => state.search);
 
     return (
@@ -17,9 +19,8 @@ const Home = () => {
             <Logo />
             <section className={searchBox}>
                 <h1 className={title}>Find in records</h1>
-                <Search />
+                <Search home={true} />
             </section>
-            <Search />
             <div className={showBox}>
                 <ul>
                     {

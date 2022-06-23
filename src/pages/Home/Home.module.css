@@ -18,6 +18,10 @@
   margin-inline: auto;
 }
 
+.searchBox h1 {
+  margin-bottom: 1.8rem;
+}
+
 .navBtn {
   font-weight: 700;
   font-size: 1.6rem;
@@ -26,7 +30,7 @@
   text-align: center;
   color: var(--text-color);
 }
-
+/* 
 .form {
   display: flex;
   position: relative;
@@ -48,4 +52,4 @@
   transform: translateY(-50%);
   width: 2.4rem;
   height: 2.4rem;
-}
+} */

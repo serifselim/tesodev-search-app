@@ -4,25 +4,40 @@
   margin-inline: auto;
 }
 
+/* .form input {
+  padding-left: 4.8rem;
+  margin-right: 1.1rem;
+} */
+
+.formBox {
+  flex: 1;
+}
+
 .form {
   display: flex;
   position: relative;
-  margin-top: 1.8rem;
 }
 
 .form input {
-  padding-left: 4.8rem;
-  margin-right: 1.1rem;
+  margin-right: 2.4rem;
 }
 
-.form::before {
-  content: '';
+.homeInput {
+  padding-left: 4.8rem;
+}
+
+.addBox {
+  margin-left: 10.3rem;
+}
+
+.returnBox {
+  margin-left: 4rem;
+}
+
+.icon {
   position: absolute;
-  background-image: url('../../assets/search.svg');
-  background-repeat: no-repeat;
   top: 50%;
   left: 15px;
+  height: 1.8rem;
   transform: translateY(-50%);
-  width: 2.4rem;
-  height: 2.4rem;
 }
