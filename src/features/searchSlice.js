@@ -9,7 +9,8 @@ const initialState = {
     maxShowItemPerPage: 5,
     totalPage: Math.ceil(searchData.data.length / 5),
     currentPageData: [],
-    searchText: ''
+    searchText: '',
+    isShowMore: false
 };
 
 export const searchSlice = createSlice({
@@ -23,18 +24,19 @@ export const searchSlice = createSlice({
             if (!state.searchText) {
                 state.filterArr = state.searchArr;
                 state.totalPage = Math.ceil(state.filterArr.length / state.maxShowItemPerPage);
+                state.isShowMore = false;
             }
         },
         setFilterArrWithText: state => {
-            const { searchArr, searchText, maxShowItemPerPage } = state;
+            const { searchArr, filterArr, searchText, maxShowItemPerPage } = state;
 
             state.filterArr = searchArr.filter(item => {
                 const myText = searchText.toLowerCase().replace(/\s+/g, '');
                 const arrText = item[1].toLowerCase().replace(/\s+/g, '');
                 return arrText.includes(myText);
             });
-
             state.totalPage = Math.ceil(state.filterArr.length / maxShowItemPerPage);
+            state.isShowMore = state.totalPage ? true : false;
         },
         updateFilterArrBySort: (state, { payload }) => {
             state.filterArr.sort((a, b) => {

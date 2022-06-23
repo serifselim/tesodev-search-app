@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // Styles
 import styles from './Add.module.css';
 import utilsStyles from '../../styles/utils.module.css';
@@ -7,6 +7,10 @@ const Add = () => {
     // Styles Variables
     const { container, addBox, addForm, addLabel } = styles;
     const { input, btn } = utilsStyles;
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
 
     return (
         <main className={container}>

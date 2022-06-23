@@ -23,7 +23,7 @@
 }
 
 .homeInput {
-  padding-left: 4.8rem;
+  padding-left: 4.8rem !important;
 }
 
 .addBox {

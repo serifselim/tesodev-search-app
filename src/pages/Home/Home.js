@@ -12,7 +12,31 @@ const Home = () => {
     // Style Variables
     const { container, showBox, navBtn, searchBox } = styles;
     const { title } = utilsStyles;
-    const { currentPageData } = useSelector(state => state.search);
+    const { currentPageData, isShowMore } = useSelector(state => state.search);
+
+    const showMoreBox = (<div className={showBox}>
+        <ul>
+            {
+                currentPageData.map((item, i) => {
+                    if (i < 3) {
+                        return (
+                            <ListItem
+                                key={i}
+                                nameSurname={item[0]}
+                                company={item[1]}
+                                date={item[3]}
+                                country={item[4]}
+                                city={item[5]}
+                            />
+                        );
+                    }
+                })
+            }
+        </ul>
+        <Link to='/result' className={navBtn}>
+            Show more...
+        </Link>
+    </div>);
 
     return (
         <main className={container}>
@@ -21,29 +45,7 @@ const Home = () => {
                 <h1 className={title}>Find in records</h1>
                 <Search home={true} />
             </section>
-            <div className={showBox}>
-                <ul>
-                    {
-                        currentPageData.map((item, i) => {
-                            if (i < 3) {
-                                return (
-                                    <ListItem
-                                        key={i}
-                                        nameSurname={item[0]}
-                                        company={item[1]}
-                                        date={item[3]}
-                                        country={item[4]}
-                                        city={item[5]}
-                                    />
-                                );
-                            }
-                        })
-                    }
-                </ul>
-                <Link to='/result' className={navBtn}>
-                    Show more...
-                </Link>
-            </div>
+            {isShowMore && showMoreBox}
             <News />
             <Footer />
         </main >
