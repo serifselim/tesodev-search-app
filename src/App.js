@@ -17,6 +17,11 @@ const App = () => {
   useEffect(() => {
     dispatch(setCurrentPageData());
   }, [currentPage, filterArr]);
+  /* 
+    Uygulama ilk çalıştığı zaman aktif olan arrayimizin güncellenmesi için useEffect kullandık
+    onun haricinden pagination kısmında yapmış olduğumuz eventlerin dinlenmesini yine bu kod bloğu içerisinde sağlıyoruz ve 
+    sayfa numarasına göre gösterilecek array dizinini güncelliyoruz
+  */
 
   return (
     <div className={styles.container}>

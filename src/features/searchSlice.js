@@ -17,7 +17,7 @@ export const searchSlice = createSlice({
     name: 'search',
     initialState,
     reducers: {
-        setSearchText: (state, { payload }) => {
+        setSearchText: (state, { payload }) => { // Yazımızı saklar ve günceller
             state.searchText = payload;
             state.currentPage = 1;
 
@@ -27,7 +27,7 @@ export const searchSlice = createSlice({
                 state.isShowMore = false;
             }
         },
-        setFilterArrWithText: state => {
+        setFilterArrWithText: state => { // Arama sonucunu bize döndürür
             const { searchArr, filterArr, searchText, maxShowItemPerPage } = state;
 
             state.filterArr = searchArr.filter(item => {
@@ -38,11 +38,11 @@ export const searchSlice = createSlice({
             state.totalPage = Math.ceil(state.filterArr.length / maxShowItemPerPage);
             state.isShowMore = state.totalPage ? true : false;
         },
-        addNewItemToArr: (state, { payload }) => {
+        addNewItemToArr: (state, { payload }) => { // Arrayimize yeni bir eleman eklememizi sağlar
             state.searchArr = [payload, ...state.searchArr];
             state.filterArr = [payload, ...state.filterArr];
         },
-        updateFilterArrBySort: (state, { payload }) => {
+        updateFilterArrBySort: (state, { payload }) => { // Sırlama işlemi tipine göre listemizi tekrardan sıralar
             state.filterArr.sort((a, b) => {
                 switch (payload) {
                     case 'nameAscend':
@@ -58,19 +58,19 @@ export const searchSlice = createSlice({
                 }
             });
         },
-        setCurrentPage: (state, { payload }) => {
+        setCurrentPage: (state, { payload }) => { // Aktif sayfamızın değerini değiştirir
             state.currentPage = payload;
         },
-        setCurrentPageData: state => {
+        setCurrentPageData: state => { // Aktif sayfamızda bulunacak elemanları günceller
             const { currentPage, maxShowItemPerPage } = state;
             const startIndex = currentPage !== 1 ? (currentPage * maxShowItemPerPage - maxShowItemPerPage) : 0;
             const endIndex = startIndex + maxShowItemPerPage;
             state.currentPageData = state.filterArr.slice(startIndex, endIndex);
         },
-        setCurrentPageDecrease: state => {
+        setCurrentPageDecrease: state => { // Aktif sayfamızın değerini bir arttırır
             state.currentPage--;
         },
-        setCurrentPageIncrease: state => {
+        setCurrentPageIncrease: state => { // Aktif sayfamızın değerini bir azaltır
             state.currentPage++;
         },
 

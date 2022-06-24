@@ -37,6 +37,9 @@ const Home = () => {
             Show more...
         </Link>
     </div>);
+    /* 
+      Result kısmına gitmemizi sağlayan ve bize aradığımız sonuçları gösteren fonksiyon 
+    */
 
     return (
         <main className={container}>

@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { updateFilterArrBySort } from '../../features/searchSlice';
 
 
-const useClickOutside = (handler) => {
+const useClickOutside = (handler) => { // Aktif komponent dışına tıkladığımızı tespik etmemizi sağlayan fonksiyon
     const domNode = useRef();
 
     useEffect(() => {
@@ -24,6 +24,7 @@ const useClickOutside = (handler) => {
 
     return domNode;
 };
+// Bu sayede order elementinden çıkmak istediğimiz durumda dışarı tıklamamız yetmektedir
 
 const Order = () => {
     // Hooks
@@ -55,12 +56,12 @@ const Order = () => {
         }
     ];
 
-    const handleClick = e => {
+    const handleClick = e => { // aksiyon tipine göre değiştirilecek değeri reduxa gönderiyoruz.
         const action = e.target.value;
         dispatch(updateFilterArrBySort(action));
     };
 
-    const domNode = useClickOutside(() => {
+    const domNode = useClickOutside(() => { // Callback fonksiyonu ile boolean kontrolü sağlıyoruz
         setIsOpen(false);
     });
 

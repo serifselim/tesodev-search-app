@@ -15,6 +15,7 @@ const Result = () => {
                 <Order />
                 <List />
                 {filterArr.length > 5 && <Pagination />}
+                {/* Belli bir sayfa üzerinde olması halinde pagination componenti devreye girer */}
             </section>
         </main>
     );

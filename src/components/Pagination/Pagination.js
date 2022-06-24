@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // Style
 import styles from './Pagination.module.css';
 //Redux
@@ -7,9 +7,6 @@ import { setCurrentPage, setCurrentPageData, setCurrentPageDecrease, setCurrentP
 import PaginationButton from './PaginationButton';
 
 const Pagination = () => {
-    // Hooks
-    const [isMore, setIsMore] = useState(false);
-
     //Stlye Variables 
     const { pagBox, pagItem, pagBtn, pagList, pagBtnLg, pagDot } = styles;
 
@@ -17,9 +14,9 @@ const Pagination = () => {
     const { currentPage, totalPage } = useSelector(state => state.search);
     const dispatch = useDispatch();
     // Constants
-    const paginationArr = Array.apply(0, Array(totalPage));
+    const paginationArr = Array.apply(0, Array(totalPage)); // pagination arrayini bir arraye çevirdik çünkü bunu daha sonra dönmemiz gerekecek 
 
-    const handleClick = e => {
+    const handleClick = e => { // Tıklama eventi gerçekleştiğinde eğer aktif sayfa üzerinde değilsek pagination işlemini başlatmak için redux ile bağlantı kurulacak
         const reqPage = e.target.value;
         if (reqPage !== currentPage) {
             dispatch(setCurrentPage(reqPage));
@@ -27,45 +24,25 @@ const Pagination = () => {
         }
     };
 
-    const decreaseCurrentPage = () => {
+    const decreaseCurrentPage = () => {  // Birer birer mevcut sayfamızı azaltmayı sağlar
         if (currentPage > 1) {
             dispatch(setCurrentPageDecrease());
         }
     };
-    const increaseCurrentPage = () => {
+    const increaseCurrentPage = () => { // Birer birer mevcut sayfamızı arttırmamızı sağlar
         if (currentPage < totalPage) {
             dispatch(setCurrentPageIncrease());
         }
     };
 
-    const normalPaginationList = paginationArr.map((x, i) => (
+    const normalPaginationList = paginationArr.map((x, i) => ( // 6 sayfadan küçük olması durumunda normal pagination işlemi görüntülenecek
         <PaginationButton
             pageValue={i + 1}
             handleClick={handleClick}
         />
     ));
 
-    const morePaginationList = paginationArr.map((x, i) => {
-        const page = totalPage;
-        if (page <= 3) {
-            return (
-                <PaginationButton
-                    pageValue={i + 1}
-                    handleClick={handleClick}
-                />
-            );
-        }
-        if (page >= (totalPage - 2)) {
-            return (
-                <PaginationButton
-                    pageValue={i + 1}
-                    handleClick={handleClick}
-                />
-            );
-        }
-    });
-
-    const morePaginationListFirst = paginationArr.map((x, i) => {
+    const morePaginationListFirst = paginationArr.map((x, i) => { // 6 Sayfadan büyük olduğu durumda ilk 3 sayı gösterilecek
         if ((i - 1) <= 1) {
             return (
                 <PaginationButton
@@ -76,7 +53,7 @@ const Pagination = () => {
         }
     });
 
-    const morePaginationListLast = paginationArr.map((x, i) => {
+    const morePaginationListLast = paginationArr.map((x, i) => { // 6 Sayfadan büyük olduğu durumda son 3 sayı gösterilecek
         if ((i - 1) >= (totalPage - 4)) {
             return (
                 <PaginationButton
@@ -87,7 +64,7 @@ const Pagination = () => {
         }
     });
 
-    const MorePaginationListAll = () => {
+    const MorePaginationListAll = () => { // ilk ve son kısımlarının üzerinde orta alanda bulunan bir show ikonu gösterilecek
         return (
             <>
                 {morePaginationListFirst}
