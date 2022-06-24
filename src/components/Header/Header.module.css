@@ -49,3 +49,55 @@
 .returnBtn img {
   margin-right: 1.2rem;
 }
+
+/* // Masaüstü Classları */
+.desktopBox {
+  display: block;
+}
+
+/* Mobile Classları */
+.mobileBox {
+  display: none;
+}
+
+.mobileBox .headerBox {
+  flex-direction: column;
+  padding: 2.2rem 2.5rem;
+}
+
+.mobileBox .addBox {
+  margin: 0;
+}
+
+.firstElement {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.secondElement {
+  width: 100%;
+}
+
+@media only screen and (max-width: 680px) {
+  .desktopBox {
+    display: none;
+  }
+  .mobileBox {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .desktopBox {
+    display: none;
+  }
+  .mobileBox {
+    display: block;
+  }
+  .returnBtn {
+    font-size: 2.5rem;
+  }
+}

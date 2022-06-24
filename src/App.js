@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom';
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentPageData } from './features/searchSlice';
+// Styles
+import styles from './App.module.css';
 
 const App = () => {
 
@@ -17,23 +19,25 @@ const App = () => {
   }, [currentPage, filterArr]);
 
   return (
-    <>
+    <div className={styles.container}>
       <Header />
-      <Routes>
-        <Route
-          path='/'
-          element={<Home />}
-        />
-        <Route
-          path='/result'
-          element={<Result />}
-        />
-        <Route
-          path='/add'
-          element={<Add />}
-        />
-      </Routes>
-    </>
+      <div className={styles.content}>
+        <Routes>
+          <Route
+            path='/'
+            element={<Home />}
+          />
+          <Route
+            path='/result'
+            element={<Result />}
+          />
+          <Route
+            path='/add'
+            element={<Add />}
+          />
+        </Routes>
+      </div>
+    </div>
   );
 };
 

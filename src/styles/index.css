@@ -35,3 +35,9 @@ hr {
   margin: 1rem auto;
   width: 95%;
 }
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 8px;
+  }
+}

@@ -47,3 +47,21 @@
   background: #b3b3b3;
   color: #fff;
 }
+
+@media only screen and (max-width: 680px) {
+  .orderBox {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .orderList {
+    position: relative;
+    box-shadow: none;
+    margin-bottom: 1.5rem;
+    border-radius: 0;
+    text-align: center;
+  }
+  .orderBtn {
+    margin: 0 auto;
+  }
+}

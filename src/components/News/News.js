@@ -17,9 +17,9 @@ const News = () => {
         <section className={newsBox}>
             <h1 className={title}>Top News</h1>
             <div className={listBox}>
-                <Icon arrowSrc={leftArrow} />
+                <Icon arrowSrc={leftArrow} className={arrowIcon} />
                 <NewsList />
-                <Icon arrowSrc={rightArrow} />
+                <Icon arrowSrc={rightArrow} className={arrowIcon} />
             </div>
         </section>
     );

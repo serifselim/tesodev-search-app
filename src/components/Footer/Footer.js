@@ -8,14 +8,20 @@ import Location from './Location';
 
 const Footer = () => {
     //Style Variables
-    const { footerBox, footerContent } = styles;
+    const { footerBox, footerContent, footerImgBox, footerImg, locationBox, informationBox } = styles;
 
     return (
         <section className={footerBox}>
             <div className={footerContent}>
-                <img src={footerSrc} alt='footer' />
-                <Information />
-                <Location />
+                <div className={footerImgBox}>
+                    <img className={footerImg} src={footerSrc} alt='footer' />
+                </div>
+                <div className={informationBox}>
+                    <Information />
+                </div>
+                <div className={locationBox}>
+                    <Location />
+                </div>
             </div>
         </section >
     );

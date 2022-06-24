@@ -49,3 +49,16 @@
   font-family: 'Roboto', sans-serif;
   color: var(--error-text-color);
 }
+
+@media only screen and (max-width: 680px) {
+  .addBox {
+    width: 90%;
+  }
+  .addLabel {
+    margin-top: 1.5rem;
+  }
+  .addForm button {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+}

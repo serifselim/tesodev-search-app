@@ -1,4 +1,5 @@
 .footerBox {
+  width: 100%;
   margin-top: 5.8rem;
   background: var(--secondary-color);
 }
@@ -7,6 +8,11 @@
   display: flex;
   align-items: center;
   padding: 2.7rem 5.3rem;
+}
+
+.footerContent img {
+  width: 100%;
+  height: auto;
 }
 
 .footerInf {
@@ -23,4 +29,33 @@
 
 .footerLoc {
   margin-left: auto;
+}
+
+.footerImgBox {
+  flex: 2;
+}
+
+.locationBox {
+  flex: 3;
+}
+
+.informationBox {
+  flex: 6;
+}
+
+.footerImg {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 1280px) {
+  .footerImgBox {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .locationBox {
+    display: none;
+  }
 }
