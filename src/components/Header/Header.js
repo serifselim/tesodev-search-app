@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Search from '../Search/Search';
 // React Router
 import { useLocation, Link } from 'react-router-dom';
@@ -16,64 +16,60 @@ const Header = () => {
     // React Router
     const { pathname } = useLocation();
 
-    const LogoDiv = () => (<div className={logoBox}>
-        {pathname !== '/' &&
-            <Link to='/'>
-                <img src={logoSrc} alt='logo' height={63} />
-            </Link>
-        }
-        {pathname === '/add' &&
-            <div className={returnBox}>
-                <Link to='/' className={returnBtn}>
-                    <img src={returnSrc} alt='icon' />
-                    Return to List Page
-                </Link>
-            </div>
-        }
-    </div>);
-
-    const SearchDiv = () => (
-        <>
-            {pathname === '/result' &&
-                <div className={formBox}>
-                    <Search />
-                </div>
-            }
-        </>
+    const logoDiv = (
+        <Link to='/'>
+            <img src={logoSrc} alt='logo' height={63} />
+        </Link>
     );
 
-    const AddDiv = () => (
-        <>
-            {pathname !== '/add' &&
-                <div className={addBox}>
-                    <Link to='/add'>
-                        <button className={btn} >
-                            Add new record
-                        </button>
-                    </Link>
-                </div>
-            }
-        </>
+    const returnListPage = (
+        <div className={returnBox}>
+            <Link to='/' className={returnBtn}>
+                <img src={returnSrc} alt='icon' />
+                Return to List Page
+            </Link>
+        </div>
+    );
+
+    const searchDiv =
+        <div className={formBox}>
+            <Search />
+        </div>;
+
+    const addDiv = (
+        <div className={addBox}>
+            <Link to='/add'>
+                <button className={btn} >
+                    Add new record
+                </button>
+            </Link>
+        </div>
     );
 
     return (
         <header className={header}>
             <div className={desktopBox}>
                 <section className={headerBox}>
-                    <LogoDiv />
-                    <SearchDiv />
-                    <AddDiv />
+                    <div className={logoBox}>
+                        {pathname !== '/' && logoDiv}
+                        {pathname === '/add' && returnListPage}
+                    </div>
+                    {pathname === '/result' && searchDiv}
+                    <div>
+                        {pathname !== '/add' && addDiv}
+                    </div>
+
                 </section>
             </div>
 
             <div className={mobileBox}>
                 <section className={headerBox}>
                     <div className={firstElement}>
-                        <LogoDiv />
-                        <AddDiv />
+                        {pathname !== '/' && logoDiv}
+                        {pathname !== '/add' && addDiv}
                     </div>
                     <div className={secondElement}>
-                        <SearchDiv />
+                        {pathname === '/result' && searchDiv}
                     </div>
                 </section>
             </div>

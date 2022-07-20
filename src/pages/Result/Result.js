@@ -1,7 +1,7 @@
 import React from 'react';
 // Styles
 import styles from './Result.module.css';
-import { List, Order, Pagination } from '../../components';
+import { List, Order, Pagination, Search } from '../../components';
 import { useSelector } from 'react-redux';
 
 const Result = () => {

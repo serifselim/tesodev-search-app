@@ -10,8 +10,10 @@ const useClickOutside = (handler) => { // Aktif komponent dışına tıkladığ�
 
     useEffect(() => {
         let mouseDownFunc = (event) => {
-            if (!domNode.current.contains(event.target)) {
-                handler();
+            if (domNode.current) {
+                if (!domNode.current.contains(event.target)) {
+                    handler();
+                }
             }
         };
 
